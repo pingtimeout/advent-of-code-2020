@@ -18,8 +18,8 @@ trait AdventOfCode {
   def solvePartTwo(): Unit = ???
 }
 
-trait Mode
-
+// @formatter:off
+sealed trait Mode
 case object Example extends Mode
-
 case object Real extends Mode
+// @formatter:on
