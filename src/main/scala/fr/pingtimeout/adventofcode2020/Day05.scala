@@ -2,7 +2,7 @@ package fr.pingtimeout.adventofcode2020
 
 case class Day05(mode: Mode) extends AdventOfCode {
   override val dayName: String = "day05"
-  lazy val input = text(mode)
+  lazy val input: Seq[Int] = text(mode)
     .map(line => line.replaceAll("[FL]", "0").replaceAll("[BR]", "1"))
     .map(Integer.parseInt(_, 2))
     .sorted

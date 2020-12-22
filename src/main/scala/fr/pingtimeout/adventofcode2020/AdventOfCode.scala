@@ -4,8 +4,8 @@ import scala.io.Source
 
 trait AdventOfCode {
   val dayName: String
-  lazy val exampleText = Source.fromResource(s"${dayName}/example.txt").getLines.toList
-  lazy val inputText = Source.fromResource(s"${dayName}/real.txt").getLines.toList
+  lazy val exampleText: Seq[String] = Source.fromResource(s"${dayName}/example.txt").getLines.toList
+  lazy val inputText: Seq[String] = Source.fromResource(s"${dayName}/real.txt").getLines.toList
 
   def text(mode: Mode): Seq[String] =
     mode match {

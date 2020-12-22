@@ -3,10 +3,10 @@ package fr.pingtimeout.adventofcode2020
 case class Day03(mode: Mode) extends AdventOfCode {
   override val dayName: String = "day03"
   lazy val map: IndexedSeq[IndexedSeq[Char]] = text(mode).map(_.toSeq).toIndexedSeq
-  lazy val width = map(0).size
-  lazy val height = map.size
+  lazy val width: Int = map(0).size
+  lazy val height: Int = map.size
 
-  def countEncounters(horizontalStep: Int, verticalStep: Int) = {
+  def countEncounters(horizontalStep: Int, verticalStep: Int): Long = {
     (0 until (height / verticalStep))
       .map(iteration => (verticalStep * iteration, horizontalStep * iteration % width))
       .map { case (a, b) => if (map(a)(b) == '#') 1 else 0 }

@@ -10,7 +10,6 @@ case class Day02(mode: Mode) extends AdventOfCode {
     val pattern = "^([0-9]+)-([0-9]+) ([a-z]): ([a-z]*)$".r
     line match {
       case pattern(min, max, character, password) => (Policy(character(0), min.toInt to max.toInt), password)
-      case _ => throw new IllegalArgumentException(line)
     }
   }
 
