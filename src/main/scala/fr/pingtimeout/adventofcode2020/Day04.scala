@@ -24,7 +24,7 @@ case class Day04(mode: Mode, part: Option[String] = None) extends AdventOfCode {
       .sum)
   }
 
-  override def solvePartTwo(): Unit = {
+  override def solvePartTwo() {
     val validationRules: Map[String, String => Boolean] = Map(
       "byr" -> (str => str.length == 4 && (1920 to 2002).contains(str.toInt)),
       "iyr" -> (str => str.length == 4 && (2010 to 2020).contains(str.toInt)),

@@ -11,7 +11,7 @@ case class Day05(mode: Mode) extends AdventOfCode {
     println(input.last)
   }
 
-  override def solvePartTwo(): Unit = {
+  override def solvePartTwo() {
     println((0 to 1024).diff(input)
       .zip((-1 to 1024).diff(input))
       .filter(x => x._1 - 1 != x._2)

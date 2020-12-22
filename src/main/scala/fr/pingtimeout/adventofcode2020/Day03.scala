@@ -18,7 +18,7 @@ case class Day03(mode: Mode) extends AdventOfCode {
     println(countEncounters(3, 1))
   }
 
-  override def solvePartTwo(): Unit = {
+  override def solvePartTwo() {
     println(countEncounters(1, 1)
       * countEncounters(3, 1)
       * countEncounters(5, 1)

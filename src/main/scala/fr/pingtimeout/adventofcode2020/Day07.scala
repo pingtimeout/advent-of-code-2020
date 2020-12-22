@@ -15,8 +15,8 @@ case class Day07(mode: Mode) extends AdventOfCode {
   lazy val bagsToContent: Map[Bag, Map[_ <: Bag, Quantity]] = text(mode)
     .map {
       case specification(containerBag, "no other bags") => (Bag(containerBag), Map())
-      case specification(containerBag, contents) =>
-        (Bag(containerBag), contents
+      case specification(containerBag, content) =>
+        (Bag(containerBag), content
           .split(", ")
           .map({ case contents(quantity, containedBag) => Bag(containedBag) -> Quantity(quantity.toLong) })
           .toMap)
@@ -55,7 +55,7 @@ case class Day07(mode: Mode) extends AdventOfCode {
     println(listBagsContainersOf(Bag("shiny gold")).toSet.size)
   }
 
-  override def solvePartTwo(): Unit = {
+  override def solvePartTwo() {
     println(countBagsContainedBy(Bag("shiny gold")) - 1)
   }
 }
