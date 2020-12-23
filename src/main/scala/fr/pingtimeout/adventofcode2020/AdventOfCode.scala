@@ -1,5 +1,7 @@
 package fr.pingtimeout.adventofcode2020
 
+import java.util.concurrent.TimeUnit
+
 import scala.io.Source
 
 trait AdventOfCode {
@@ -13,9 +15,21 @@ trait AdventOfCode {
       case Real => inputText
     }
 
-  def solvePartOne(): Unit = ???
+  final def time(function: => Unit): Unit = {
+    val start = System.nanoTime()
+    val result = function // call-by-name
+    val end = System.nanoTime()
+    val elapsed = end - start
+    println(s"Elapsed time: ${TimeUnit.NANOSECONDS.toMillis(elapsed)}ms")
+    println()
+  }
 
-  def solvePartTwo(): Unit = ???
+  // @formatter:off
+  final def solvePartOne() = time(doSolvePartOne())
+  final def solvePartTwo() = time(doSolvePartTwo())
+  def doSolvePartOne(): Unit = ???
+  def doSolvePartTwo(): Unit = ???
+  // @formatter:on
 }
 
 // @formatter:off

@@ -14,11 +14,11 @@ case class Day03(mode: Mode) extends AdventOfCode {
       .toLong
   }
 
-  override def solvePartOne() {
+  override def doSolvePartOne() {
     println(countEncounters(3, 1))
   }
 
-  override def solvePartTwo() {
+  override def doSolvePartTwo() {
     println(countEncounters(1, 1)
       * countEncounters(3, 1)
       * countEncounters(5, 1)

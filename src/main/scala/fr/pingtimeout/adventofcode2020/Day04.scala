@@ -17,14 +17,14 @@ case class Day04(mode: Mode, part: Option[String] = None) extends AdventOfCode {
       .toMap)
     .toSeq
 
-  override def solvePartOne() {
+  override def doSolvePartOne() {
     println(input
       .map(passport => Seq("byr", "ecl", "eyr", "hcl", "hgt", "iyr", "pid").forall(passport.contains))
       .map(if (_) 1 else 0)
       .sum)
   }
 
-  override def solvePartTwo() {
+  override def doSolvePartTwo() {
     val validationRules: Map[String, String => Boolean] = Map(
       "byr" -> (str => str.length == 4 && (1920 to 2002).contains(str.toInt)),
       "iyr" -> (str => str.length == 4 && (2010 to 2020).contains(str.toInt)),

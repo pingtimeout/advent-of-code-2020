@@ -7,11 +7,11 @@ case class Day05(mode: Mode) extends AdventOfCode {
     .map(Integer.parseInt(_, 2))
     .sorted
 
-  override def solvePartOne() {
+  override def doSolvePartOne() {
     println(input.last)
   }
 
-  override def solvePartTwo() {
+  override def doSolvePartTwo() {
     println((0 to 1024).diff(input)
       .zip((-1 to 1024).diff(input))
       .filter(x => x._1 - 1 != x._2)

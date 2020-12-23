@@ -4,7 +4,7 @@ case class Day01(mode: Mode) extends AdventOfCode {
   override val dayName: String = "day01"
   lazy val numbers: IndexedSeq[Int] = text(mode).map(_.toInt).toIndexedSeq
 
-  override def solvePartOne () {
+  override def doSolvePartOne () {
     println({
       for (i <- numbers.indices;
            j <- i + 1 until numbers.size if numbers(i) + numbers(j) == 2020)
@@ -12,7 +12,7 @@ case class Day01(mode: Mode) extends AdventOfCode {
     }.head)
   }
 
-  override def solvePartTwo() {
+  override def doSolvePartTwo() {
     println({
       for (i <- numbers.indices;
            j <- i + 1 until numbers.size;

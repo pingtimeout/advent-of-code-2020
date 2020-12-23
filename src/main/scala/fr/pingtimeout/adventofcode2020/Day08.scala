@@ -7,7 +7,7 @@ case class Day08(mode: Mode) extends AdventOfCode {
     .map(line => line.split(" "))
     .map(array => (array(0), array(1)))
 
-  override def solvePartOne() {
+  override def doSolvePartOne() {
     @scala.annotation.tailrec
     def runUntilLoopRec(pos: Int, visitedPos: Set[Int], accumulator: Int): Int = {
       if (visitedPos.contains(pos))
@@ -22,7 +22,7 @@ case class Day08(mode: Mode) extends AdventOfCode {
     println(runUntilLoopRec(0, Set(), 0))
   }
 
-  override def solvePartTwo() {
+  override def doSolvePartTwo() {
     def runUntilLoopRec(pos: Int,
                         visitedPos: Set[Int],
                         accumulator: Int,

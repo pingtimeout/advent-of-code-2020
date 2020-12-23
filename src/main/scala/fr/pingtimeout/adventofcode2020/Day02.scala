@@ -13,13 +13,13 @@ case class Day02(mode: Mode) extends AdventOfCode {
     }
   }
 
-  override def solvePartOne() {
+  override def doSolvePartOne() {
     println(input.count {
       case (Policy(character, range), password) => range.contains(password.count(_ == character))
     })
   }
 
-  override def solvePartTwo() {
+  override def doSolvePartTwo() {
     println(input.count {
       case (Policy(character, range), password) =>
         password(range.head - 1) == character ^ password(range.last - 1) == character

@@ -51,11 +51,11 @@ case class Day07(mode: Mode) extends AdventOfCode {
     }
   }
 
-  override def solvePartOne() {
+  override def doSolvePartOne() {
     println(listBagsContainersOf(Bag("shiny gold")).toSet.size)
   }
 
-  override def solvePartTwo() {
+  override def doSolvePartTwo() {
     println(countBagsContainedBy(Bag("shiny gold")) - 1)
   }
 }

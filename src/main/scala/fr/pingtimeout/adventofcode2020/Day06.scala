@@ -9,14 +9,14 @@ case class Day06(mode: Mode) extends AdventOfCode {
     .map(str => (str.count(_ == '#'), str.replace("#", "")))
     .toSeq
 
-  override def solvePartOne() {
+  override def doSolvePartOne() {
     println(input
       .map {
         case (numPersons, allAnswers) => allAnswers.toSet.size
       }.sum)
   }
 
-  override def solvePartTwo() {
+  override def doSolvePartTwo() {
     println(input
       .map {
         case (numPersons, allAnswers) => allAnswers
